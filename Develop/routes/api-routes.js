@@ -7,6 +7,7 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) { // runs passport middleware using local strategy
+    // passport-local strategy automatically sends the userame and password by default.
     res.json(req.user);
   });
 
